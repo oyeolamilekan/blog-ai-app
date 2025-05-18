@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 17% 34%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 17% 34%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 17% 34%;
+
+    --primary: 210 17% 34%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 185 15% 66%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 18 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
+    --ring: 210 17% 34%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
+  }
+}
+
+.input-container {
+  @apply relative bg-white border border-[#E5E7EB] rounded-lg shadow-input transition-all duration-200 ease-in-out;
+}
+
+.input-container:focus-within {
+  @apply border-primary shadow-lg ring-1 ring-primary/10;
+}
+
+.result-card {
+  @apply bg-white rounded-xl p-6 shadow-elegant border border-[#E5E7EB] hover:shadow-lg transition-all duration-300;
+}
+
+.section-title {
+  @apply text-lg font-medium text-primary tracking-tighter mb-4;
+}
+
+.content-list {
+  @apply space-y-4;
+}
+
+.list-item {
+  @apply flex items-start gap-3 animate-fade-in;
+}
