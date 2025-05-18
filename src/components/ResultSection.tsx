@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { Separator } from "@/components/ui/separator";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { BookOpen, ListCheck, Circle } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -32,14 +30,14 @@ const ResultSection: React.FC<ResultSectionProps> = ({ result }) => {
   return (
     <div className="w-full max-w-3xl mx-auto mt-8 space-y-8">
       <div className="result-card">
-        <h2 className="section-title">Summary</h2>
-        <p className="text-primary leading-relaxed">{result.summary}</p>
+        <h2 className="text-2xl font-medium tracking-tighter mb-4">Summary</h2>
+        <p className="leading-relaxed">{result.summary}</p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-elegant border border-[#E5E7EB] overflow-hidden">
+      <div className="bg-card rounded-xl border border-border overflow-hidden">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-medium text-primary tracking-tighter">Extracted Results</h2>
+            <h2 className="text-lg font-medium tracking-tighter">Extracted Results</h2>
             <Button 
               variant="outline" 
               size="sm" 
@@ -56,7 +54,7 @@ const ResultSection: React.FC<ResultSectionProps> = ({ result }) => {
           </div>
           
           <Tabs defaultValue="keyPoints" className="w-full">
-            <TabsList className="bg-[#F5F7F9] p-1 rounded-lg mb-6">
+            <TabsList className="bg-muted p-1 rounded-lg mb-6">
               <TabsTrigger value="keyPoints" className="flex items-center gap-2">
                 <Circle size={16} />
                 Key Points
@@ -87,10 +85,10 @@ const ResultSection: React.FC<ResultSectionProps> = ({ result }) => {
                 {result.keyPoints.map((point, index) => (
                   <div
                     key={`key-${index}`}
-                    className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm"
+                    className="p-4 bg-card rounded-lg border border-border"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <p className="text-sm text-primary">{point}</p>
+                    <p className="text-sm ">{point}</p>
                   </div>
                 ))}
               </div>
@@ -112,10 +110,10 @@ const ResultSection: React.FC<ResultSectionProps> = ({ result }) => {
                 {result.lessons.map((lesson, index) => (
                   <div
                     key={`lesson-${index}`}
-                    className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm"
+                    className="p-4 bg-card rounded-lg border border-border"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <p className="text-sm text-primary">{lesson}</p>
+                    <p className="text-sm ">{lesson}</p>
                   </div>
                 ))}
               </div>
@@ -137,10 +135,10 @@ const ResultSection: React.FC<ResultSectionProps> = ({ result }) => {
                 {result.actionItems.map((item, index) => (
                   <div
                     key={`action-${index}`}
-                    className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm"
+                    className="p-4 bg-card rounded-lg border border-border"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <p className="text-sm text-primary">{item}</p>
+                    <p className="text-sm ">{item}</p>
                   </div>
                 ))}
               </div>

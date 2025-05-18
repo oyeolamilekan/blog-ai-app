@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,44 +6,85 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 17% 34%;
+    --background: 0 0% 3%;    /* Near Black - Default Dark Theme */
+    --foreground: 0 0% 100%;  /* Pure White */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 17% 34%;
+    --card: 0 0% 7%;           /* Dark Gray for cards */
+    --card-foreground: 0 0% 100%; /* Pure White text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 17% 34%;
+    --popover: 0 0% 7%;        /* Dark Gray for popovers */
+    --popover-foreground: 0 0% 100%; /* Pure White text on popovers */
 
-    --primary: 210 17% 34%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 100%;      /* Pure White for primary text */
+    --primary-foreground: 0 0% 5%; /* Dark for text on light primary bg (if any) */
 
-    --secondary: 185 15% 66%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 65%;     /* Medium Gray for secondary text */
+    --secondary-foreground: 0 0% 5%; /* Dark for text on light secondary bg */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 210 10% 50%;
+    --muted: 0 0% 10%;         /* Slightly lighter Dark Gray for muted backgrounds */
+    --muted-foreground: 0 0% 70%; /* Medium-Light Gray for muted text */
 
-    --accent: 18 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 15%;        /* Dark Gray as an accent */
+    --accent-foreground: 0 0% 98%; /* Light Gray/White */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 0% 98%;    /* Light color for destructive text */
+    --destructive-foreground: 0 0% 5%; /* Dark for destructive button backgrounds */
 
-    --border: 210 20% 92%;
-    --input: 210 20% 92%;
-    --ring: 210 17% 34%;
+    --border: 0 0% 15%;        /* Darker Gray for borders, subtle */
+    --input: 0 0% 15%;         /* Darker Gray for input borders */
+    --ring: 0 0% 80%;           /* Light gray for focus rings */
 
-    --radius: 0.75rem;
+    --radius: 0.5rem; /* Existing radius */
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar variables - dark theme */
+    --sidebar-background: 0 0% 5%;   /* Dark Gray */
+    --sidebar-foreground: 0 0% 98%;  /* Light Gray/White */
+    --sidebar-primary: 0 0% 98%;      /* Light Gray/White */
+    --sidebar-primary-foreground: 0 0% 3%; /* Near Black */
+    --sidebar-accent: 0 0% 20%;       /* Slightly lighter Dark Gray */
+    --sidebar-accent-foreground: 0 0% 98%;/* Light Gray/White */
+    --sidebar-border: 0 0% 12%;       /* Subtle Dark Border */
+    --sidebar-ring: 0 0% 80%;         /* Light gray for focus rings */
+  }
+
+  .light {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%;    /* Black */
+
+    --card: 0 0% 100%;         /* White */
+    --card-foreground: 0 0% 0%; /* Black */
+
+    --popover: 0 0% 100%;      /* White */
+    --popover-foreground: 0 0% 0%; /* Black */
+
+    --primary: 0 0% 0%;        /* Black */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 0 0% 25%;     /* Dark Gray for secondary text */
+    --secondary-foreground: 0 0% 100%; /* White for text on dark secondary bg */
+
+    --muted: 0 0% 95%;         /* Very Light Gray for muted backgrounds */
+    --muted-foreground: 0 0% 40%; /* Medium Gray for muted text */
+
+    --accent: 0 0% 10%;        /* Very Dark Gray as an accent */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 0% 0%;    /* Black for destructive actions/text */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive button */
+
+    --border: 0 0% 85%;        /* Light Gray for borders */
+    --input: 0 0% 85%;         /* Light Gray for input borders */
+    --ring: 0 0% 0%;           /* Black for focus rings */
+
+    /* Sidebar variables - light theme */
+    --sidebar-background: 0 0% 98%; /* Off-white */
+    --sidebar-foreground: 0 0% 0%;    /* Black */
+    --sidebar-primary: 0 0% 0%;        /* Black */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 0 0% 90%;        /* Light gray for accent background */
+    --sidebar-accent-foreground: 0 0% 0%; /* Black for accent text */
+    --sidebar-border: 0 0% 85%;        /* Light Gray */
+    --sidebar-ring: 0 0% 0%;           /* Black */
   }
 
   * {
@@ -63,15 +103,15 @@
 }
 
 .input-container {
-  @apply relative bg-white border border-[#E5E7EB] rounded-lg shadow-input transition-all duration-200 ease-in-out;
+  @apply relative bg-card border border-border rounded-lg transition-all duration-200 ease-in-out;
 }
 
 .input-container:focus-within {
-  @apply border-primary shadow-lg ring-1 ring-primary/10;
+  @apply border-primary ring-1 ring-primary/10;
 }
 
 .result-card {
-  @apply bg-white rounded-xl p-6 shadow-elegant border border-[#E5E7EB] hover:shadow-lg transition-all duration-300;
+  @apply bg-card rounded-xl p-6 border border-border transition-all duration-300;
 }
 
 .section-title {
@@ -84,4 +124,29 @@
 
 .list-item {
   @apply flex items-start gap-3 animate-fade-in;
+}
+
+/* Button extensions for better dark mode support */
+.btn-default {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-destructive {
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+}
+
+.btn-outline {
+  @apply border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+.btn-ghost {
+  @apply hover:bg-muted hover:text-muted-foreground;
+}
+
+.btn-link {
+  @apply text-primary underline-offset-4 hover:underline;
 }

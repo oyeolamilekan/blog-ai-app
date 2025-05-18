@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -52,17 +51,17 @@ const UrlInput: React.FC<UrlInputProps> = ({ onSubmit, isLoading }) => {
               setUrl(e.target.value);
               setError("");
             }}
-            className="border-0 shadow-none focus-visible:ring-0 h-14 text-base px-4"
+            className="border-0 shadow-none focus-visible:ring-0 h-14 text-base px-4 placeholder:text-muted-foreground bg-transparent"
           />
           <Button
             type="submit"
             disabled={isLoading}
-            className="bg-accent hover:bg-accent/90 text-white px-6 h-12 rounded-lg ml-2"
+            className="bg-white hover:bg-white/90 text-black px-6 h-12 rounded-lg ml-2"
           >
             {isLoading ? "Analyzing..." : "Summarize"}
           </Button>
         </div>
-        {error && <p className="text-red-500 text-sm pl-2">{error}</p>}
+        {error && <p className="text-destructive text-sm pl-2">{error}</p>}
       </form>
     </div>
   );
