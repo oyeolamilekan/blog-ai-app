@@ -21,8 +21,8 @@ It also features a promotional banner for &lt;AppState/&gt;.
 1.  **Clone the repository:**
 
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-name>
+    git clone https://github.com/oyeolamilekan/blog-ai-app
+    cd blog-ai-app
     ```
 
 2.  **Install dependencies:**
